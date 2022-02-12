@@ -1,4 +1,5 @@
 import 'package:anboba/main.dart';
+import 'package:anboba/screens/indexscreen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,15 +7,19 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Anboboa"),
+        title: Text("ANBOBA"),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 64, 169, 255),
+        backgroundColor: Color.fromARGB(255, 23, 101, 121),
       ),
       body: backGround(),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+            Navigator.push(context,
+                    MaterialPageRoute(builder: (context) =>  IndexScreen()));
+        },
         icon: Icon(Icons.arrow_forward),
         label: Text('Lets Start'),
+        backgroundColor: Color.fromARGB(255, 23, 101, 121),
       ),
     );
   }
@@ -23,7 +28,7 @@ class HomeScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('images/gas.jpg'),
+          image: AssetImage('images/gas1.jpg'),
           fit: BoxFit.cover,
           repeat: ImageRepeat.noRepeat,
           colorFilter:
